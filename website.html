@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Suryansh Soni — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f9fafb;
+      --muted:#6b7280;
+      --accent:#1f2937;
+      --primary:#111827;
+      --card:#ffffff;
+      --line:#e5e7eb;
+      --radius:14px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    body.dark{
+      --bg:#111827;
+      --muted:#9ca3af;
+      --accent:#f3f4f6;
+      --primary:#ffffff;
+      --card:#1f2937;
+      --line:#374151;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--accent);-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+    .container{max-width:1100px;margin:28px auto;padding:28px}
+
+    /* Header */
+    .header{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+    .name-row{display:flex;align-items:center;gap:16px;justify-content:space-between;width:100%}
+    .avatar-small{width:60px;height:60px;border-radius:999px;overflow:hidden;flex-shrink:0;border:3px solid var(--line)}
+    .avatar-small img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{margin:0;font-size:28px;color:var(--primary)}
+    .sub{margin-top:4px;color:var(--muted);font-weight:600}
+    .contacts{display:flex;gap:12px;color:var(--muted);margin-top:8px;font-size:14px;flex-wrap:wrap}
+    .contacts a{color:inherit;text-decoration:none}
+
+    /* Theme Toggle */
+    .theme-toggle{margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s,transform .3s}
+    .theme-toggle:hover{transform:rotate(20deg)}
+
+    /* Layout */
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:28px;margin-top:28px}
+    .card{background:var(--card);border-radius:var(--radius);padding:20px;border:1px solid var(--line);box-shadow:0 4px 12px rgba(0,0,0,0.05);transition:transform .3s ease, box-shadow .3s ease, background .3s, color .3s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,0.08)}
+
+    .about{line-height:1.6;color:var(--accent)}
+    .section-title{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .section-title h3{margin:0;font-size:18px;color:var(--primary)}
+    .timeline{position:relative;padding-left:18px}
+    .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line);border-radius:2px}
+    .item{position:relative;padding:10px 0 18px 18px}
+    .dot{position:absolute;left:-6px;top:14px;width:12px;height:12px;background:var(--primary);border-radius:999px}
+    .job-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .job-title{font-weight:600;color:var(--primary)}
+    .job-meta{font-size:13px;color:var(--muted)}
+    .job-desc{margin:8px 0 0;color:var(--accent)}
+
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:8px 12px;background:#f3f4f6;border-radius:999px;border:1px solid var(--line);font-weight:600;color:var(--primary);font-size:13px;transition:background .3s}
+    .chip:hover{background:#e5e7eb}
+    body.dark .chip{background:#374151;color:#f9fafb}
+    body.dark .chip:hover{background:#4b5563}
+
+    .refs{display:flex;flex-direction:column;gap:12px}
+    .ref .name{font-weight:700;color:var(--primary)}
+    .ref .meta{font-size:13px;color:var(--muted)}
+
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr}
+      .contacts{flex-wrap:wrap}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="name-row">
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="avatar-small">
+            <img src="meee.jpg" alt="Suryansh Soni">
+          </div>
+          <div>
+            <h1>SURYANSH SONI</h1>
+            <div class="sub">Designer | Freelancer</div>
+          </div>
+        </div>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+      </div>
+      <div class="contacts">
+        <div>📍 Vadodara</div>
+        <div>✉ <a href="mailto:freelancersuru18@gmail.com">freelancersuru18@gmail.com</a></div>
+        <div>📱 +91 9601645370</div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section>
+        <div class="card">
+          <div class="section-title"><h3>About Me</h3></div>
+          <p class="about">Creative and detail-oriented designer with 1+ years of freelance experience in delivering high-impact visual solutions for clients across various industries. Skilled in WordPress, branding, and digital design with a strong ability to translate concepts into engaging visuals. Reliable, self-motivated, and adept at managing multiple projects from concept to completion under tight deadlines.</p>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <div class="section-title"><h3>Work Experience</h3></div>
+          <div class="timeline">
+            <div class="item">
+              <div class="dot"></div>
+              <div class="job-head">
+                <div>
+                  <div class="job-title">TechVenus Solutions — Digital Marketing (Intern)</div>
+                  <div class="job-meta">Jan 2025 — Mar 2025 | Remote, Canada</div>
+                </div>
+              </div>
+              <div class="job-desc">Assisted in developing visually engaging designs and supporting online marketing strategies. Applied branding and design principles with data-driven approaches to enhance client campaigns and contributed to marketing projects using WordPress and basic design software.</div>
+            </div>
+
+            <div class="item">
+              <div class="dot"></div>
+              <div class="job-head">
+                <div>
+                  <div class="job-title">TechVenus Solutions — Junior Graphic Designer (Trainee)</div>
+                  <div class="job-meta">Dec 2023 — Dec 2024 | Remote, Canada</div>
+                </div>
+              </div>
+              <div class="job-desc">Hands-on experience in digital marketing and visual content creation. Skilled in Adobe Photoshop, social media design, and branding. Blended design with strategy to create engaging visual experiences.</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <div class="section-title"><h3>Education</h3></div>
+          <ul style="margin:0;padding-left:18px;color:var(--accent)">
+            <li><strong>CHARUSAT University</strong> — BCA (2023 — 2026)</li>
+            <li><strong>Ambe Vidyalaya</strong> — HSC</li>
+            <li><strong>Ambe Vidyalaya</strong> — SSC</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="card">
+          <div class="section-title"><h3>Skills</h3></div>
+          <div class="skill-list">
+            <div class="chip">Customer Service</div>
+            <div class="chip">WordPress</div>
+            <div class="chip">Canva</div>
+            <div class="chip">Digital Marketing</div>
+            <div class="chip">Customer Management</div>
+            <div class="chip">HTML</div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="section-title"><h3>Extra Skills</h3></div>
+            <div class="skill-list">
+              <div class="chip">Odoo Website</div>
+              <div class="chip">Shopify Website</div>
+              <div class="chip">Enthusiastic Learner</div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div class="section-title"><h3>Achievements</h3></div>
+            <div style="color:var(--accent)">University Certificate (2024): Full Stack Development & Digital Marketing (Charusat University)</div>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <div class="section-title"><h3>References</h3></div>
+          <div class="refs">
+            <div class="ref">
+              <div class="name">Nikesh Kumar</div>
+              <div class="meta">TechVenus Solutions — +91 85099 76267</div>
+            </div>
+            <div class="ref">
+              <div class="name">Jay Panchal</div>
+              <div class="meta">Charusat University — +91 79841 22528</div>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer>
+      <div class="card" style="display:inline-block;padding:12px 18px;background:transparent;border:none">Contact: <a href="mailto:freelancersuru18@gmail.com">freelancersuru18@gmail.com</a> • +91 9601645370</div>
+    </footer>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    function setTheme(theme){
+      if(theme === 'dark'){
+        body.classList.add('dark');
+        toggleBtn.textContent = '☀';
+      } else {
+        body.classList.remove('dark');
+        toggleBtn.textContent = '🌙';
+      }
+      localStorage.setItem('theme', theme);
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      if(body.classList.contains('dark')){
+        setTheme('light');
+      } else {
+        setTheme('dark');
+      }
+    });
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+  </script>
+</body>
+</html>
